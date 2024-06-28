@@ -30,7 +30,8 @@ app.use(bodyParser.json());
 
 mongoose.connect('mongodb+srv://othmane:ottmmanee145@database_oth.zhrzthc.mongodb.net/?retryWrites=true&w=majority&appName=database_oth/test', {
   useNewUrlParser: true,
-  useUnifiedTopology: true 
+  useUnifiedTopology: true ,
+  serverSelectionTimeoutMS: 30000,
 }).then(() => {
   console.log("connected"); 
 }).catch((err) => {
@@ -43,7 +44,7 @@ app.get('/', (req, res) => {
 routes(app);
 
 
-const PORT = process.env.PORT || 8800;
+const PORT = process.env.PORT || 10000;
 app.listen(PORT, () => {
   console.log("server is running" );
 });
