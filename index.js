@@ -27,6 +27,8 @@ const app = express();
 //  );
 app.use(cors());
 app.use(bodyParser.json());
+mongoose.set('debug', true);
+
 
 mongoose.connect('mongodb+srv://othmane:ottmmanee145@database_oth.zhrzthc.mongodb.net/?retryWrites=true&w=majority&appName=database_oth/test', {
   useNewUrlParser: true,
